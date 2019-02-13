@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblHelloWorld = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -49,16 +50,27 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
             // 
+            // lblHelloWorld
+            // 
+            this.lblHelloWorld.AutoSize = true;
+            this.lblHelloWorld.Location = new System.Drawing.Point(308, 284);
+            this.lblHelloWorld.Name = "lblHelloWorld";
+            this.lblHelloWorld.Size = new System.Drawing.Size(62, 13);
+            this.lblHelloWorld.TabIndex = 2;
+            this.lblHelloWorld.Text = "Hello World";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblHelloWorld);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -66,6 +78,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblHelloWorld;
     }
 }
 
