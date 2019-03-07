@@ -15,5 +15,13 @@ namespace NexusCorpFilmReviews.Models
 
         //Public property for the Director ID in the Credit Model. This is a foreign key
         public virtual int DirectorID { get; set; }
+
+        //Connecting the foreign keys to this model
+
+        //Actor ID foreign key
+        public virtual ActorModel ActorModel { get; set; }
+
+        //Director ID foreign key
+        public virtual DirectorModel DirectorModel { get; set; }
     }
 }

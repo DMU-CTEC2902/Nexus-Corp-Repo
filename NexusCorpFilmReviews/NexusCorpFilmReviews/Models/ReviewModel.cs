@@ -21,4 +21,14 @@ namespace NexusCorpFilmReviews.Models
 
         //Public property for the Film ID in the Review Model. This is the foreign key
         public virtual int FilmID { get; set; }
+
+        //Connecting the foreign keys to this model
+
+        //User ID foreign key
+        public virtual UserModel UserModel { get; set; }
+
+        //Film ID foreign key
+        public virtual FilmModel FilmModel { get; set; }
+
+    }
 }

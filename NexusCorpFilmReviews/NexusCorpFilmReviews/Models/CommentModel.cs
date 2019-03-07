@@ -21,5 +21,13 @@ namespace NexusCorpFilmReviews.Models
 
         //Public property for the Credit ID in the Comment Model. This is a foreign key
         public virtual int CreditID { get; set; }
+
+        //Connecting the foreign keys to this model
+
+        //User ID foreign key
+        public virtual UserModel UserModel { get; set; }
+
+        //Credit ID foreign key
+        public virtual CreditModel CreditModel { get; set; }
     }
 }
