@@ -19,6 +19,9 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Release Date in the Film Model
         public virtual DateTime ReleaseDate { get; set; }
 
+        //Public property for the Rating in the Film Model
+        public virtual int Rating { get; set; }
+
         //Public property for the User ID in the Film Model. This is a foreign key
         public virtual int UserID { get; set; }
 
