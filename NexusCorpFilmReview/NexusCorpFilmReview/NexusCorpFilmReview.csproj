@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7E5D755B-BCBE-4FE8-81B4-13981AE691AD}</ProjectGuid>
+    <ProjectGuid>{1D209C30-EE64-44F1-94B7-F9D549525C7B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -94,17 +94,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\NewsStoryModel.cs" />
+    <Compile Include="Models\ActorModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\CreditModel.cs" />
+    <Compile Include="Models\DirectorModel.cs" />
+    <Compile Include="Models\FilmModel.cs" />
+    <Compile Include="Models\GenreModel.cs" />
+    <Compile Include="Models\ReviewModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -114,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -128,9 +134,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2652</DevelopmentServerPort>
+          <DevelopmentServerPort>24654</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2652/</IISUrl>
+          <IISUrl>http://localhost:24654/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
