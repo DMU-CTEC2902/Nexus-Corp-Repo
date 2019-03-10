@@ -164,6 +164,7 @@
     <Compile Include="Models\Director.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmContext.cs" />
+    <Compile Include="Models\FilmDataInitialiser.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\User.cs" />
