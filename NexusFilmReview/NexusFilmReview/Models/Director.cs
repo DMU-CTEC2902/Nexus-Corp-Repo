@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NexusFilmReview.Models
 {
-    public class DirectorModel
+    public class Director
     {
         //Public property for the Director ID in the Director Model. This is a primary key
         public virtual int DirectorID { get; set; }

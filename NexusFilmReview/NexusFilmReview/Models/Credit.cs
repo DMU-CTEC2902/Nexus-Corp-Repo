@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NexusFilmReview.Models
 {
-    public class CreditModel
+    public class Credit
     {
         //Public property for the Credit ID in the Credit Model. This is a primary key
         public virtual int CreditID { get; set; }
@@ -19,9 +19,9 @@ namespace NexusFilmReview.Models
         //Connecting the foreign keys to this model
 
         //Actor ID foreign key
-        public virtual ActorModel ActorModel { get; set; }
+        public virtual Actor Actor { get; set; }
 
         //Director ID foreign key
-        public virtual DirectorModel DirectorModel { get; set; }
+        public virtual Director Director { get; set; }
     }
 }

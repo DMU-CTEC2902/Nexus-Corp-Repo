@@ -5,13 +5,13 @@ using System.Web;
 
 namespace NexusFilmReview.Models
 {
-    public class CommentModel
+    public class Comment
     {
         //Public property for the Comment ID in the Comment Model. This is the primary key
         public virtual int CommentID { get; set; }
 
         //Public property for the Comment in the Comment Model
-        public virtual string Comment { get; set; }
+        public virtual string CommentDescription { get; set; }
 
         //Public property for the Comment Date Added in the Comment Model
         public virtual DateTime CommentDateAdded { get; set; }
@@ -25,9 +25,9 @@ namespace NexusFilmReview.Models
         //Connecting the foreign keys to this model
 
         //User ID foreign key
-        public virtual UserModel UserModel { get; set; }
+        public virtual User User { get; set; }
 
         //Credit ID foreign key
-        public virtual CreditModel CreditModel { get; set; }
+        public virtual Credit Credit { get; set; }
     }
 }

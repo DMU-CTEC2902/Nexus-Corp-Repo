@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NexusFilmReview.Models
 {
-    public class UserModel
+    public class User
     {
         //Public property for the User ID in the User Model. This is the primary key
         public virtual int UserID { get; set; }

@@ -5,12 +5,12 @@ using System.Web;
 
 namespace NexusFilmReview.Models
 {
-    public class GenreModel
+    public class Genre
     {
         //Public property for the Genre ID in the Genre model. This is the primary key
         public virtual int GenreID { get; set; }
 
         //Public property for the Genre in the Genre model
-        public virtual string Genre { get; set; }
+        public virtual string GenreTitle { get; set; }
     }
 }
