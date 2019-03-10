@@ -16,7 +16,7 @@ namespace NexusFilmReview.Controllers
                 FilmName = "Brave 2",
                 FilmDescription = "Determined to make her own path in life, Princess Merida defies a custom that brings chaos to her kingdom. Granted one wish, Merida must rely on her bravery and her archery skills to undo a beastly curse.",
                 ReleaseDate = Convert.ToDateTime("12/06/2015"),
-                Rating = 9 / 10
+                Rating = 9 
             };
 
             return View(film);
