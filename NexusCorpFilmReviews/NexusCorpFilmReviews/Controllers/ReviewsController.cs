@@ -10,107 +10,112 @@ using NexusCorpFilmReviews.Models;
 
 namespace NexusCorpFilmReviews.Controllers
 {
-    public class FilmsController : Controller
+    public class ReviewsController : Controller
     {
         private FilmContext db = new FilmContext();
 
-        // GET: Films
+        // GET: Reviews
         public ActionResult Index()
         {
-            return View(db.Films.ToList());
+            var reviews = db.Reviews.Include(r => r.Film);
+            return View(reviews.ToList());
         }
 
-        // GET: Films/Details/5
+        // GET: Reviews/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            Review review = db.Reviews.Find(id);
+            if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(review);
         }
 
-        // GET: Films/Create
+        // GET: Reviews/Create
         public ActionResult Create()
         {
+            ViewBag.FilmId = new SelectList(db.Films, "FilmId", "FilmName");
             return View();
         }
 
-        // POST: Films/Create
+        // POST: Reviews/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Create([Bind(Include = "ReviewId,ReviewContent,ReviewDateAdded,UserName,FilmId")] Review review)
         {
             if (ModelState.IsValid)
             {
-                db.Films.Add(film);
+                db.Reviews.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(film);
+            ViewBag.FilmId = new SelectList(db.Films, "FilmId", "FilmName", review.FilmId);
+            return View(review);
         }
 
-        // GET: Films/Edit/5
+        // GET: Reviews/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            Review review = db.Reviews.Find(id);
+            if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            ViewBag.FilmId = new SelectList(db.Films, "FilmId", "FilmName", review.FilmId);
+            return View(review);
         }
 
-        // POST: Films/Edit/5
+        // POST: Reviews/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Edit([Bind(Include = "ReviewId,ReviewContent,ReviewDateAdded,UserName,FilmId")] Review review)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(film).State = EntityState.Modified;
+                db.Entry(review).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(film);
+            ViewBag.FilmId = new SelectList(db.Films, "FilmId", "FilmName", review.FilmId);
+            return View(review);
         }
 
-        // GET: Films/Delete/5
+        // GET: Reviews/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            Review review = db.Reviews.Find(id);
+            if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(review);
         }
 
-        // POST: Films/Delete/5
+        // POST: Reviews/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Film film = db.Films.Find(id);
-            db.Films.Remove(film);
+            Review review = db.Reviews.Find(id);
+            db.Reviews.Remove(review);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

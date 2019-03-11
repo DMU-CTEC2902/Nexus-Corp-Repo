@@ -22,28 +22,16 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Rating in the Film Model
         public virtual int Rating { get; set; }
 
-        //Public property for the User ID in the Film Model. This is a foreign key
-        public virtual int UserId { get; set; }
-
-        //Public property for the Credit ID in the Film Model. This is a foreign key
-        public virtual int CreditId { get; set; }
-
         //Public property for the Genre ID in the Film Model. This is a foreign key
-        public virtual int GenreId { get; set; }
+        public virtual int GenreType { get; set; }
+
+        //Public property for the User Name in the Film Model
+        public virtual string UserName { get; set; }
 
         //Connecting the foreign keys to this model
 
-        //User ID foreign key
-        public virtual User User { get; set; }
-
-        //Credit ID foreign key
-        public virtual Credit Credit { get; set; }
-
         //Genre ID foreign key
-        public virtual Genre Genre { get; set; }
-
-
-
+        public virtual Genre GenreId { get; set; }
 
     }
 }
