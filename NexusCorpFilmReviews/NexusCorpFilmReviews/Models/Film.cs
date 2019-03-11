@@ -10,6 +10,9 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Film ID in the Film Model. This is the primary key
         public virtual int FilmId { get; set; }
 
+        //Public property for the Genre ID in the Film Model. This is a foreign key
+        public virtual int GenreId { get; set; }
+
         //Public property for the Film Name in the Film Model
         public virtual string FilmName { get; set; }
 
@@ -31,7 +34,7 @@ namespace NexusCorpFilmReviews.Models
         //Connecting the foreign keys to this model
 
         //Genre ID foreign key
-        public virtual Genre GenreId { get; set; }
+        public virtual Genre Genre { get; set; }
 
     }
 }
