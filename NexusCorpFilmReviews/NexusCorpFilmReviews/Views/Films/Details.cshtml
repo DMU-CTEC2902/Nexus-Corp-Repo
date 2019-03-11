@@ -1,0 +1,74 @@
+﻿@model NexusCorpFilmReviews.Models.Film
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Film</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit.CreditId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit.CreditId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre.GenreType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre.GenreType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FilmName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FilmName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FilmDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FilmDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FilmId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
