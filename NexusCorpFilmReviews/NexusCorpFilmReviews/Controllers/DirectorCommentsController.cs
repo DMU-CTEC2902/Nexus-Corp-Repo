@@ -10,107 +10,107 @@ using NexusCorpFilmReviews.Models;
 
 namespace NexusCorpFilmReviews.Controllers
 {
-    public class FilmsController : Controller
+    public class DirectorCommentsController : Controller
     {
         private FilmContext db = new FilmContext();
 
-        // GET: Films
+        // GET: DirectorComments
         public ActionResult Index()
         {
-            return View(db.Films.ToList());
+            return View(db.DirectorComments.ToList());
         }
 
-        // GET: Films/Details/5
+        // GET: DirectorComments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            DirectorComment directorComment = db.DirectorComments.Find(id);
+            if (directorComment == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(directorComment);
         }
 
-        // GET: Films/Create
+        // GET: DirectorComments/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Films/Create
+        // POST: DirectorComments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Create([Bind(Include = "DirectorCommentId,DirectorCommentContent,DirectorCommentDateAdded,UserName")] DirectorComment directorComment)
         {
             if (ModelState.IsValid)
             {
-                db.Films.Add(film);
+                db.DirectorComments.Add(directorComment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(film);
+            return View(directorComment);
         }
 
-        // GET: Films/Edit/5
+        // GET: DirectorComments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            DirectorComment directorComment = db.DirectorComments.Find(id);
+            if (directorComment == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(directorComment);
         }
 
-        // POST: Films/Edit/5
+        // POST: DirectorComments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Edit([Bind(Include = "DirectorCommentId,DirectorCommentContent,DirectorCommentDateAdded,UserName")] DirectorComment directorComment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(film).State = EntityState.Modified;
+                db.Entry(directorComment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(film);
+            return View(directorComment);
         }
 
-        // GET: Films/Delete/5
+        // GET: DirectorComments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            DirectorComment directorComment = db.DirectorComments.Find(id);
+            if (directorComment == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(directorComment);
         }
 
-        // POST: Films/Delete/5
+        // POST: DirectorComments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Film film = db.Films.Find(id);
-            db.Films.Remove(film);
+            DirectorComment directorComment = db.DirectorComments.Find(id);
+            db.DirectorComments.Remove(directorComment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

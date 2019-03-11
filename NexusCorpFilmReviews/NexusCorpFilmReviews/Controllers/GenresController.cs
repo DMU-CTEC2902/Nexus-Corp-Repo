@@ -10,107 +10,107 @@ using NexusCorpFilmReviews.Models;
 
 namespace NexusCorpFilmReviews.Controllers
 {
-    public class FilmsController : Controller
+    public class GenresController : Controller
     {
         private FilmContext db = new FilmContext();
 
-        // GET: Films
+        // GET: Genres
         public ActionResult Index()
         {
-            return View(db.Films.ToList());
+            return View(db.Genres.ToList());
         }
 
-        // GET: Films/Details/5
+        // GET: Genres/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            Genre genre = db.Genres.Find(id);
+            if (genre == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(genre);
         }
 
-        // GET: Films/Create
+        // GET: Genres/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Films/Create
+        // POST: Genres/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Create([Bind(Include = "GenreId,GenreType")] Genre genre)
         {
             if (ModelState.IsValid)
             {
-                db.Films.Add(film);
+                db.Genres.Add(genre);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(film);
+            return View(genre);
         }
 
-        // GET: Films/Edit/5
+        // GET: Genres/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            Genre genre = db.Genres.Find(id);
+            if (genre == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(genre);
         }
 
-        // POST: Films/Edit/5
+        // POST: Genres/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Edit([Bind(Include = "GenreId,GenreType")] Genre genre)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(film).State = EntityState.Modified;
+                db.Entry(genre).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(film);
+            return View(genre);
         }
 
-        // GET: Films/Delete/5
+        // GET: Genres/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Film film = db.Films.Find(id);
-            if (film == null)
+            Genre genre = db.Genres.Find(id);
+            if (genre == null)
             {
                 return HttpNotFound();
             }
-            return View(film);
+            return View(genre);
         }
 
-        // POST: Films/Delete/5
+        // POST: Genres/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Film film = db.Films.Find(id);
-            db.Films.Remove(film);
+            Genre genre = db.Genres.Find(id);
+            db.Genres.Remove(genre);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

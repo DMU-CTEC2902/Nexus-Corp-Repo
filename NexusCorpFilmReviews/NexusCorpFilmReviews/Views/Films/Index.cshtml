@@ -12,15 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Credit.CreditId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre.GenreType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.UserFirstName)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.FilmName)
         </th>
         <th>
@@ -32,20 +23,17 @@
         <th>
             @Html.DisplayNameFor(model => model.Rating)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Credit.CreditId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre.GenreType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.UserFirstName)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.FilmName)
         </td>
@@ -57,6 +45,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GenreType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.FilmId }) |
