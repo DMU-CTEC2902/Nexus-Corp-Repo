@@ -33,5 +33,7 @@ namespace NexusCorpFilmReviews.Models
         public DbSet<Director> Directors { get; set; }
 
         public DbSet<DirectorComment> DirectorComments { get; set; }
+
+        public DbSet<Gossip> Gossips { get; set; }
     }
 }
