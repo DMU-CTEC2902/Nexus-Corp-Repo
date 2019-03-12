@@ -25,5 +25,6 @@ namespace NexusCorpFilmReviews.Models
         //Connecting the foreign keys to this model
 
         public virtual Actor Actor { get; set; }
+
     }
 }

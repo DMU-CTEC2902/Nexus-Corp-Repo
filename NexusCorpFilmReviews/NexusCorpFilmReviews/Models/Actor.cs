@@ -19,7 +19,11 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Actor Date of Birth in the Actor Model
         public virtual DateTime ActorDOB { get; set; }
 
+        //Public property for the Actor age in the Actor Model
+        public virtual int ActorAge { get; set; }
+
         //Public property for the Actor Gender in the Actor Model
         public virtual string ActorGender { get; set; }
+
     }
 }

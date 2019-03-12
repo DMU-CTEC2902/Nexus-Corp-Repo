@@ -19,7 +19,11 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Director Date of Birth in the Director Model
         public virtual DateTime DirectorDOB { get; set; }
 
+        //Public property for the director age in the director Model
+        public virtual int DirectorAge { get; set; }
+
         //Public property for the Director Gender in the Director Model
         public virtual string DirectorGender { get; set; }
+
     }
 }

@@ -17,7 +17,8 @@ namespace NexusCorpFilmReviews.Controllers
         // GET: ActorComments
         public ActionResult Index()
         {
-            return View(db.ActorComments.ToList());
+            var actorComments = db.ActorComments.Include(a => a.Actor);
+            return View(actorComments.ToList());
         }
 
         // GET: ActorComments/Details/5
@@ -38,6 +39,7 @@ namespace NexusCorpFilmReviews.Controllers
         // GET: ActorComments/Create
         public ActionResult Create()
         {
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace NexusCorpFilmReviews.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ActorCommentId,ActorCommentContent,ActorCommentDateAdded,UserName")] ActorComment actorComment)
+        public ActionResult Create([Bind(Include = "ActorCommentId,ActorId,ActorCommentContent,ActorCommentDateAdded,UserName")] ActorComment actorComment)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace NexusCorpFilmReviews.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName", actorComment.ActorId);
             return View(actorComment);
         }
 
@@ -70,6 +73,7 @@ namespace NexusCorpFilmReviews.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName", actorComment.ActorId);
             return View(actorComment);
         }
 
@@ -78,7 +82,7 @@ namespace NexusCorpFilmReviews.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ActorCommentId,ActorCommentContent,ActorCommentDateAdded,UserName")] ActorComment actorComment)
+        public ActionResult Edit([Bind(Include = "ActorCommentId,ActorId,ActorCommentContent,ActorCommentDateAdded,UserName")] ActorComment actorComment)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace NexusCorpFilmReviews.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName", actorComment.ActorId);
             return View(actorComment);
         }
 

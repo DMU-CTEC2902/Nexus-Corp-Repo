@@ -12,6 +12,15 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Actor.ActorFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director.DirectorFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre.GenreType)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.FilmName)
         </th>
         <th>
@@ -34,6 +43,15 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actor.ActorFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Director.DirectorFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre.GenreType)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.FilmName)
         </td>

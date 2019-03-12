@@ -194,14 +194,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActorCommentsController.cs" />
     <Compile Include="Controllers\ActorsController.cs" />
-    <Compile Include="Controllers\DirectorCommentsController.cs" />
-    <Compile Include="Controllers\DirectorsController.cs" />
     <Compile Include="Controllers\FilmsController.cs" />
-    <Compile Include="Controllers\GenresController.cs" />
-    <Compile Include="Controllers\GossipsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -284,16 +279,6 @@
     <Content Include="Views\Films\Details.cshtml" />
     <Content Include="Views\Films\Edit.cshtml" />
     <Content Include="Views\Films\Index.cshtml" />
-    <Content Include="Views\Genres\Create.cshtml" />
-    <Content Include="Views\Genres\Delete.cshtml" />
-    <Content Include="Views\Genres\Details.cshtml" />
-    <Content Include="Views\Genres\Edit.cshtml" />
-    <Content Include="Views\Genres\Index.cshtml" />
-    <Content Include="Views\Reviews\Create.cshtml" />
-    <Content Include="Views\Reviews\Delete.cshtml" />
-    <Content Include="Views\Reviews\Details.cshtml" />
-    <Content Include="Views\Reviews\Edit.cshtml" />
-    <Content Include="Views\Reviews\Index.cshtml" />
     <Content Include="Views\Actors\Create.cshtml" />
     <Content Include="Views\Actors\Delete.cshtml" />
     <Content Include="Views\Actors\Details.cshtml" />
@@ -304,21 +289,6 @@
     <Content Include="Views\ActorComments\Details.cshtml" />
     <Content Include="Views\ActorComments\Edit.cshtml" />
     <Content Include="Views\ActorComments\Index.cshtml" />
-    <Content Include="Views\Directors\Create.cshtml" />
-    <Content Include="Views\Directors\Delete.cshtml" />
-    <Content Include="Views\Directors\Details.cshtml" />
-    <Content Include="Views\Directors\Edit.cshtml" />
-    <Content Include="Views\Directors\Index.cshtml" />
-    <Content Include="Views\DirectorComments\Create.cshtml" />
-    <Content Include="Views\DirectorComments\Delete.cshtml" />
-    <Content Include="Views\DirectorComments\Details.cshtml" />
-    <Content Include="Views\DirectorComments\Edit.cshtml" />
-    <Content Include="Views\DirectorComments\Index.cshtml" />
-    <Content Include="Views\Gossips\Create.cshtml" />
-    <Content Include="Views\Gossips\Delete.cshtml" />
-    <Content Include="Views\Gossips\Details.cshtml" />
-    <Content Include="Views\Gossips\Edit.cshtml" />
-    <Content Include="Views\Gossips\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
