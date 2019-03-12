@@ -198,7 +198,6 @@
     <Compile Include="Controllers\DirectorsController.cs" />
     <Compile Include="Controllers\FilmsController.cs" />
     <Compile Include="Controllers\GenresController.cs" />
-    <Compile Include="Controllers\GossipsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
@@ -213,7 +212,6 @@
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmContext.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\Gossip.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Review.cs" />
@@ -314,11 +312,6 @@
     <Content Include="Views\DirectorComments\Details.cshtml" />
     <Content Include="Views\DirectorComments\Edit.cshtml" />
     <Content Include="Views\DirectorComments\Index.cshtml" />
-    <Content Include="Views\Gossips\Create.cshtml" />
-    <Content Include="Views\Gossips\Delete.cshtml" />
-    <Content Include="Views\Gossips\Details.cshtml" />
-    <Content Include="Views\Gossips\Edit.cshtml" />
-    <Content Include="Views\Gossips\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
