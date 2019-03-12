@@ -17,7 +17,8 @@ namespace NexusCorpFilmReviews.Controllers
         // GET: Films
         public ActionResult Index()
         {
-            return View(db.Films.ToList());
+            var films = db.Films.Include(f => f.Actor).Include(f => f.Director).Include(f => f.Genre);
+            return View(films.ToList());
         }
 
         // GET: Films/Details/5
@@ -38,6 +39,9 @@ namespace NexusCorpFilmReviews.Controllers
         // GET: Films/Create
         public ActionResult Create()
         {
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName");
+            ViewBag.DirectorId = new SelectList(db.Directors, "DirectorId", "DirectorFirstName");
+            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "GenreType");
             return View();
         }
 
@@ -46,7 +50,7 @@ namespace NexusCorpFilmReviews.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Create([Bind(Include = "FilmId,GenreId,ActorId,DirectorId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +59,9 @@ namespace NexusCorpFilmReviews.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName", film.ActorId);
+            ViewBag.DirectorId = new SelectList(db.Directors, "DirectorId", "DirectorFirstName", film.DirectorId);
+            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "GenreType", film.GenreId);
             return View(film);
         }
 
@@ -70,6 +77,9 @@ namespace NexusCorpFilmReviews.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName", film.ActorId);
+            ViewBag.DirectorId = new SelectList(db.Directors, "DirectorId", "DirectorFirstName", film.DirectorId);
+            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "GenreType", film.GenreId);
             return View(film);
         }
 
@@ -78,7 +88,7 @@ namespace NexusCorpFilmReviews.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Edit([Bind(Include = "FilmId,GenreId,ActorId,DirectorId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +96,9 @@ namespace NexusCorpFilmReviews.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ActorId = new SelectList(db.Actors, "ActorId", "ActorFirstName", film.ActorId);
+            ViewBag.DirectorId = new SelectList(db.Directors, "DirectorId", "DirectorFirstName", film.DirectorId);
+            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "GenreType", film.GenreId);
             return View(film);
         }
 
