@@ -212,6 +212,7 @@
     <Compile Include="Models\DirectorComment.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmContext.cs" />
+    <Compile Include="Models\FilmDataInitialiser.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Gossip.cs" />
     <Compile Include="Models\IdentityModels.cs" />
