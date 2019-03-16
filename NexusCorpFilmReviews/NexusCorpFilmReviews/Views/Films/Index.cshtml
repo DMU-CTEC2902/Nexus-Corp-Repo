@@ -41,41 +41,54 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Actor.ActorFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Director.DirectorFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre.GenreType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReleaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GenreType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FilmId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FilmId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FilmId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+    <li>
+
+        <a href="~/Film/Details/@item.FilmId">@item.FilmName</a>
+
+        @if (item.Rating > 8)
+        {
+            <text> Film Recommended! </text>
+        }
+    </li>
+
+        
+        
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor.ActorFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director.DirectorFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.GenreType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FilmId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FilmId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FilmId })
+            </td>
+        </tr>
+    }
 
 </table>
