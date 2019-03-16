@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace NexusCorpFilmReviews.Models
 {
@@ -14,6 +15,7 @@ namespace NexusCorpFilmReviews.Models
         public virtual int FilmId { get; set; }
 
         //Public property for the Review in the Review Model
+        [StringLength(500)]
         public virtual string ReviewContent { get; set; }
 
         //Public property for the Review Date Added in the Review Model

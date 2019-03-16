@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace NexusCorpFilmReviews.Models
 {
@@ -11,9 +12,11 @@ namespace NexusCorpFilmReviews.Models
         public virtual int DirectorId { get; set; }
 
         //Public property for the Director First Name in the Director Model
+        [StringLength(50)]
         public virtual string DirectorFirstName { get; set; }
 
         //Public property for the Director Last Name in the Director Model
+        [StringLength(50)]
         public virtual string DirectorLastName { get; set; }
 
         //Public property for the Director Date of Birth in the Director Model

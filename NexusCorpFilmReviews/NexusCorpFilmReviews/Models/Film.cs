@@ -23,8 +23,9 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Film Name in the Film Model
         [Required]
         public virtual string FilmName { get; set; }
-        [StringLength(100)]
+
         //Public property for the Film Description in the Film Model
+        [StringLength(500)]
         public virtual string FilmDescription { get; set; }
 
         //Public property for the Release Date in the Film Model
@@ -33,8 +34,9 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Rating in the Film Model
         public virtual int Rating { get; set; }
 
-        [StringLength(50)]
+
         //Public property for the Genre Type in the Film Model
+        [StringLength(50)]
         public virtual string GenreType { get; set; }
 
         [StringLength(20)]
