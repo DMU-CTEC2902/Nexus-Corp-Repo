@@ -44,16 +44,13 @@
     @foreach (var item in Model)
     {
     <li>
-
         <a href="~/Film/Details/@item.FilmId">@item.FilmName</a>
 
         @if (item.Rating > 8)
         {
-            <text> Film Recommended! </text>
+            <text>Film Recommended!</text>
         }
-    </li>
-
-        
+    </li>        
         
         <tr>
             <td>
