@@ -5,10 +5,10 @@ using System.Web;
 
 namespace NexusCorpFilmReviews.Models
 {
-    public class ActorModel
+    public class Actor
     {
         //Public property for the Actor ID in the Actor Model. This is a primary key
-        public virtual int ActorID { get; set; }
+        public virtual int ActorId { get; set; }
 
         //Public property for the Actor First Name in the Actor Model
         public virtual string ActorFirstName { get; set; }
@@ -19,7 +19,11 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Actor Date of Birth in the Actor Model
         public virtual DateTime ActorDOB { get; set; }
 
+        //Public property for the Actor age in the Actor Model
+        public virtual int ActorAge { get; set; }
+
         //Public property for the Actor Gender in the Actor Model
         public virtual string ActorGender { get; set; }
+
     }
 }
