@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace NexusCorpFilmReviews.Models
 {
@@ -11,6 +12,7 @@ namespace NexusCorpFilmReviews.Models
         public virtual int GossipId { get; set; }
 
         //Public property for the Gossip Comment in the Gossip Model
+        [StringLength(100)]
         public virtual string GossipContent { get; set; }
 
         //Public property for the Gossip Comment Date Added in the Gossip Model
