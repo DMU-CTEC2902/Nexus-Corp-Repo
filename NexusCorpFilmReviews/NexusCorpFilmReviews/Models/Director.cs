@@ -26,6 +26,7 @@ namespace NexusCorpFilmReviews.Models
         public virtual int DirectorAge { get; set; }
 
         //Public property for the Director Gender in the Director Model
+        [StringLength(15)]
         public virtual string DirectorGender { get; set; }
 
     }

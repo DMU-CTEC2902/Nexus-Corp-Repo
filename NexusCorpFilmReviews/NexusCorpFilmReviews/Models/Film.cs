@@ -28,7 +28,7 @@ namespace NexusCorpFilmReviews.Models
         [StringLength(500)]
         public virtual string FilmDescription { get; set; }
 
-        //Public property for the Release Date in the Film Model
+        //Public property for the Release Date in the Film Model        
         public virtual DateTime ReleaseDate { get; set; }
 
         //Public property for the Rating in the Film Model
