@@ -26,5 +26,6 @@ namespace NexusCorpFilmReviews.Controllers
 
             return View();
         }
+       
     }
 }

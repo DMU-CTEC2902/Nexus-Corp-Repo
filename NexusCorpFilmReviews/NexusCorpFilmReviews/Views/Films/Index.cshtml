@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<NexusCorpFilmReviews.Models.Film>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Films";
 }
 
 <h2>Index</h2>
@@ -41,12 +41,12 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
+    @foreach (var film in Model)
     {
     <li>
-        <a href="~/Film/Details/@item.FilmId">@item.FilmName</a>
+        <a href="~/Film/Details/@film.FilmId">@film.FilmName</a>
 
-        @if (item.Rating > 8)
+        @if (film.Rating > 8)
         {
             <text>Film Recommended!</text>
         }
@@ -54,36 +54,36 @@
         
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Actor.ActorFirstName)
+                @Html.DisplayFor(modelItem => film.Actor.ActorFirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Director.DirectorFirstName)
+                @Html.DisplayFor(modelItem => film.Director.DirectorFirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Genre.GenreType)
+                @Html.DisplayFor(modelItem => film.Genre.GenreType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FilmName)
+                @Html.DisplayFor(modelItem => film.FilmName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FilmDescription)
+                @Html.DisplayFor(modelItem => film.FilmDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
+                @Html.DisplayFor(modelItem => film.ReleaseDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Rating)
+                @Html.DisplayFor(modelItem => film.Rating)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GenreType)
+                @Html.DisplayFor(modelItem => film.GenreType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserName)
+                @Html.DisplayFor(modelItem => film.UserName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.FilmId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.FilmId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.FilmId })
+                @Html.ActionLink("Edit", "Edit", new { id = film.FilmId }) |
+                @Html.ActionLink("Details", "Details", new { id = film.FilmId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = film.FilmId })
             </td>
         </tr>
     }

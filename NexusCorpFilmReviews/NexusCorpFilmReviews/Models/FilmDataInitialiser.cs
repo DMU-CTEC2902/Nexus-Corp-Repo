@@ -109,11 +109,64 @@ namespace NexusCorpFilmReviews.Models
             //sets the actor last name
             actor1.ActorLastName = "Larson";
             //sets the date of birth 
-            actor1.ActorDOB = new DateTime(1990, 01, 01);
+            actor1.ActorDOB = new DateTime(1989, 10, 01);
             //sets the gender 
             actor1.ActorGender = "Female";
+            //sets the age
+            actor1.ActorAge = 29;
             //adds the actor to the context
             context.Actors.Add(actor1);
+
+            //Intialise the actor class
+            Actor actor2 = new Actor();
+            //sets the actor id
+            actor2.ActorId = 2;
+            //sets the actor first name
+            actor2.ActorFirstName = "Leonardo ";
+            //sets the actor last name
+            actor2.ActorLastName = "DiCaprio";
+            //sets the date of birth 
+            actor2.ActorDOB = new DateTime(1974, 11, 11);
+            //sets the gender 
+            actor2.ActorGender = "Male";
+            //sets the age
+            actor2.ActorAge = 45;
+            //adds the actor to the context
+            context.Actors.Add(actor2);
+
+            //Intialise the actor class
+            Actor actor3 = new Actor();
+            //sets the actor id
+            actor3.ActorId = 3;
+            //sets the actor first name
+            actor3.ActorFirstName = "Chris ";
+            //sets the actor last name
+            actor3.ActorLastName = "Pine";
+            //sets the date of birth 
+            actor3.ActorDOB = new DateTime(1980, 08, 26);
+            //sets the gender 
+            actor3.ActorGender = "Male";
+            //sets the age
+            actor3.ActorAge = 38;
+            //adds the actor to the context
+            context.Actors.Add(actor3);
+
+            //Intialise the actor class
+            Actor actor4 = new Actor();
+            //sets the actor id
+            actor4.ActorId = 4;
+            //sets the actor first name
+            actor4.ActorFirstName = "Scarlett";
+            //sets the actor last name
+            actor4.ActorLastName = "Johansson";
+            //sets the date of birth 
+            actor4.ActorDOB = new DateTime(1984, 11, 22);
+            //sets the gender 
+            actor4.ActorGender = "Female";
+            //sets the age
+            actor4.ActorAge = 34;
+            //adds the actor to the context
+            context.Actors.Add(actor4);
 
             //Intialise the director class
             Director director1 = new Director();
@@ -124,9 +177,11 @@ namespace NexusCorpFilmReviews.Models
             //sets the director last name
             director1.DirectorLastName = " Boden";
             //sets the date of birth 
-            director1.DirectorDOB = new DateTime(1990, 01, 01);
+            director1.DirectorDOB = new DateTime(1972, 09, 20);
             //sets the gender 
             director1.DirectorGender = "Female";
+            //sets the age
+            director1.DirectorAge = 42;
             //adds the director to the context
             context.Directors.Add(director1);
 
@@ -135,15 +190,34 @@ namespace NexusCorpFilmReviews.Models
             //sets the director id
             director2.DirectorId = 2;
             //sets the director first name
-            director2.DirectorFirstName = "Ryan";
+            director2.DirectorFirstName = "Steven";
             //sets the director last name
-            director2.DirectorLastName = " Fleck";
+            director2.DirectorLastName = " Spielberg";
             //sets the date of birth 
-            director2.DirectorDOB = new DateTime(1990, 01, 01);
+            director2.DirectorDOB = new DateTime(1946, 10, 18);
             //sets the gender 
             director2.DirectorGender = "Male";
+            //sets the age
+            director2.DirectorAge = 72;
             //adds the director to the context
             context.Directors.Add(director2);
+
+            //Intialise the director class
+            Director director3 = new Director();
+            //sets the director id
+            director3.DirectorId = 3;
+            //sets the director first name
+            director3.DirectorFirstName = "Danny";
+            //sets the director last name
+            director3.DirectorLastName = " Boyle";
+            //sets the date of birth 
+            director3.DirectorDOB = new DateTime(1956, 10, 20);
+            //sets the gender 
+            director3.DirectorGender = "Male";
+            //sets the age
+            director3.DirectorAge = 62;
+            //adds the director to the context
+            context.Directors.Add(director3);
 
             //Intialise the actor comment class
             ActorComment actorComment1 = new ActorComment();
@@ -154,7 +228,7 @@ namespace NexusCorpFilmReviews.Models
             //sets the actor comment context
             actorComment1.ActorCommentContent = "She is very talented";
             //sets actor comment date added
-            actorComment1.ActorCommentDateAdded = new DateTime(1990, 01, 01);
+            actorComment1.ActorCommentDateAdded = new DateTime(2019, 01, 05);
             //sets the user name
             actorComment1.UserName = "Bob Bartlet";
             //adds the actor comment to the context
@@ -169,7 +243,7 @@ namespace NexusCorpFilmReviews.Models
             //sets the director comment context
             directorComment1.DirectorCommentContent = "Great production producted";
             //sets director comment date added
-            directorComment1.DirectorCommentDateAdded = new DateTime(1990, 01, 01);
+            directorComment1.DirectorCommentDateAdded = new DateTime(2019, 01, 05);
             //sets the user name
             directorComment1.UserName = "Bob Bartlet";
             //adds the director comment to the context
@@ -190,13 +264,36 @@ namespace NexusCorpFilmReviews.Models
             //sets the film description
             film1.FilmDescription = "This is the latest super hero movie. It is part of the Marvel franchise";
             //sets the release date
-            film1.ReleaseDate = new DateTime(1990, 01, 01);
+            film1.ReleaseDate = new DateTime(2019, 01, 01);
             //sets the rating
             film1.Rating = 6;
             //sets the genre type
             film1.GenreType = "Science Fiction";
             //adds film to the context
             context.Films.Add(film1);
+
+            //Intialise the film class
+            Film film2 = new Film();
+            //sets the film id
+            film2.FilmId = 2;
+            //refrences the genre id
+            film2.GenreId = 1;
+            //Refernce to the actor id
+            film2.ActorId = 2;
+            //Refernce to the actor id
+            film2.DirectorId = 2;
+            //sets the film name
+            film2.FilmName = "Catch Me If You Can";
+            //sets the film description
+            film2.FilmDescription = "A seasoned FBI agent pursues Frank Abagnale Jr. who, before his 19th birthday, successfully forged millions of dollars' worth of checks while posing as a Pan Am pilot, a doctor, and a legal prosecutor.";
+            //sets the release date
+            film2.ReleaseDate = new DateTime(2002, 01, 27);
+            //sets the rating
+            film2.Rating = 6;
+            //sets the genre type
+            film2.GenreType = "Science Fiction";
+            //adds film to the context
+            context.Films.Add(film2);
 
             //Intialise the review class
             Review review1 = new Review();
@@ -207,7 +304,7 @@ namespace NexusCorpFilmReviews.Models
             //sets the director comment context
             review1.ReviewContent = "The graphics of the films are amazing!!";
             //sets director comment date added
-            review1.ReviewDateAdded = new DateTime(1990, 01, 01);
+            review1.ReviewDateAdded = new DateTime(2019, 01, 02);
             //sets the user name
             review1.UserName = "Bob Bartlet";
             //adds the review to the context
@@ -222,7 +319,7 @@ namespace NexusCorpFilmReviews.Models
             //sets the gossip content
             gossip1.GossipContent = "Brie Larson went on a mystery date";
             //sets the gossip date added
-            gossip1.GossipContentDateAdded = new DateTime(1990, 01, 01);
+            gossip1.GossipContentDateAdded = new DateTime(2019, 01, 10);
             //sets the user name
             gossip1.UserName = "Bob Bartlet";
             //adds he gossip to the context
