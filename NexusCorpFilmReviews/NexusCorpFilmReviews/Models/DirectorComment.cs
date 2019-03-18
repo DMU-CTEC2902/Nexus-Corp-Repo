@@ -22,6 +22,7 @@ namespace NexusCorpFilmReviews.Models
         public virtual DateTime DirectorCommentDateAdded { get; set; }
 
         //Public property for the User Name in the Review Model. 
+        [StringLength(50)]
         public virtual string UserName { get; set; }
 
         //Connecting the foreign keys to this model

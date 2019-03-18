@@ -12,13 +12,14 @@ namespace NexusCorpFilmReviews.Models
         public virtual int GossipId { get; set; }
 
         //Public property for the Gossip Comment in the Gossip Model
-        [StringLength(100)]
+        [StringLength(500)]
         public virtual string GossipContent { get; set; }
 
         //Public property for the Gossip Comment Date Added in the Gossip Model
         public virtual DateTime GossipContentDateAdded { get; set; }
 
-        //Public property for the User Name in the Gossip Model. 
+        //Public property for the User Name in the Gossip Model.
+        [StringLength(50)]
         public virtual string UserName { get; set; }
 
     }

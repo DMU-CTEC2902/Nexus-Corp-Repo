@@ -26,6 +26,7 @@ namespace NexusCorpFilmReviews.Models
         public virtual int ActorAge { get; set; }
 
         //Public property for the Actor Gender in the Actor Model
+        [StringLength(15)]
         public virtual string ActorGender { get; set; }
 
     }
