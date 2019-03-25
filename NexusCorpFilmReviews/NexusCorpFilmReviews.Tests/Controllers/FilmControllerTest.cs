@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NexusCorpFilmReviews.Controllers;
+using NexusCorpFilmReviews.Models;
 using System.Web.Mvc;
 
 namespace NexusCorpFilmReviews.Tests.Controllers
@@ -8,6 +9,7 @@ namespace NexusCorpFilmReviews.Tests.Controllers
     [TestClass]
     public class FilmControllerTest
     {
+
         //[TestMethod]
         //public void Index()
         //{
@@ -21,17 +23,39 @@ namespace NexusCorpFilmReviews.Tests.Controllers
         //    Assert.IsNotNull(result);
         //}
 
-        //[TestMethod]
-        //public void Details()
-        //{
-        //    // Arrange
-        //    FilmsController controller = new FilmsController();
+        [TestMethod]
+        public void Details()
+        {
+            // Arrange
+            FilmsController controller = new FilmsController();
+            //created an object to hold a film
+            Film newFilm = new Film();
+            // Act
+            ViewResult Film = controller.Details(1) as ViewResult;
+            //places the details found in details 1 into the new object
+            newFilm = Film.Model as Film;
+            // Assert
+            Assert.AreEqual(newFilm.FilmName, "Captain Marvel");
+        }
 
-        //    // Act
-        //    ViewResult Film = controller.Details() as ViewResult;
+        [TestMethod]
+        public void TestFilm()
+        {
 
-        //    // Assert
-        //    Assert.AreEqual(Details, Film.ViewBag.Message);
-        //}
+            //created an object to hold a film
+            Film newFilm = new Film();
+            newFilm.FilmName = "test";
+
+            // Arrange
+            FilmsController controller = new FilmsController(newFilm);
+
+
+            // Act
+            ViewResult Film = controller.DetailsTest() as ViewResult;
+            //places the details found in details 1 into the new object
+            newFilm = Film.Model as Film;
+            // Assert
+            Assert.AreEqual(newFilm.FilmName, "test");
+        }
     }
 }

@@ -13,6 +13,20 @@ namespace NexusCorpFilmReviews.Controllers
     public class FilmsController : Controller
     {
         private FilmContext db = new FilmContext();
+        private Film testFilm;
+
+
+        public FilmsController()
+        {
+
+        }
+
+        public FilmsController(Film tFilm)
+        {
+            testFilm = tFilm;
+        }
+
+
 
         // GET: Films
         public ActionResult Index()
@@ -28,13 +42,23 @@ namespace NexusCorpFilmReviews.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Film film = db.Films.Find(id);
+
             if (film == null)
             {
                 return HttpNotFound();
             }
             return View(film);
         }
+
+        public ActionResult DetailsTest()
+        {
+
+            return View(testFilm);
+        }
+
+
 
         // GET: Films/Create
         public ActionResult Create()
