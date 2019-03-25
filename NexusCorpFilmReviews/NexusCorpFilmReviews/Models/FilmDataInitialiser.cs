@@ -295,6 +295,30 @@ namespace NexusCorpFilmReviews.Models
             //adds film to the context
             context.Films.Add(film2);
 
+            //Intialise the film class
+            Film film3 = new Film();
+            //sets the film id
+            film3.FilmId = 3;
+            //refrences the genre id
+            film3.GenreId = 7;
+            //Refernce to the actor id
+            film3.ActorId = 4;
+            //Refernce to the actor id
+            film3.DirectorId = 2;
+            //sets the film name
+            film3.FilmName = "Lucy";
+            //sets the film description
+            film3.FilmDescription = "When a boyfriend tricks Lucy (Scarlett Johansson) into delivering a briefcase to a supposed business contact, the once-carefree student is abducted by thugs who intend to turn her into a drug mule. She is surgically implanted with a package containing a powerful chemical, but it leaks into her system, giving her superhuman abilities, including telekinesis and telepathy. ";
+            //sets the release date
+            film3.ReleaseDate = new DateTime(2014, 08, 22);
+            //sets the rating
+            film3.Rating = 4;
+            //sets the genre type
+            film3.GenreType = "Thriller";
+            //adds film to the context
+            context.Films.Add(film2);
+
+
             //Intialise the review class
             Review review1 = new Review();
             //sets director comment id
@@ -310,7 +334,21 @@ namespace NexusCorpFilmReviews.Models
             //adds the review to the context
             context.Reviews.Add(review1);
 
-            
+            //Intialise the review class
+            Review review2 = new Review();
+            //sets director comment id
+            review2.ReviewId = 2;
+            //references the director id
+            review2.FilmId = 2;
+            //sets the director comment context
+            review2.ReviewContent = "I can't believe its based on a true story. Leonardo DiCaprio its a great actor and portrays the character of Frank very well. ";
+            //sets director comment date added
+            review2.ReviewDateAdded = new DateTime(2019, 02, 10);
+            //sets the user name
+            review2.UserName = "Bob Bartlet";
+            //adds the review to the context
+            context.Reviews.Add(review2);
+
 
             //Intialise the gossip class
             Gossip gossip1 = new Gossip();
@@ -325,6 +363,18 @@ namespace NexusCorpFilmReviews.Models
             //adds he gossip to the context
             context.Gossips.Add(gossip1);
 
+            //Intialise the gossip class
+            Gossip gossip2 = new Gossip();
+            //sets the gossip id
+            gossip2.GossipId = 2;
+            //sets the gossip content
+            gossip2.GossipContent = "The marvel francise is being discontinued";
+            //sets the gossip date added
+            gossip2.GossipContentDateAdded = new DateTime(2019, 02, 18);
+            //sets the user name
+            gossip2.UserName = "Red Blue";
+            //adds he gossip to the context
+            context.Gossips.Add(gossip2);
 
             base.Seed(context);
         }
