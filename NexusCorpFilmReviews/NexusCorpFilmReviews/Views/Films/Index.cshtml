@@ -9,89 +9,93 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            <img src="~/Images/Captain_Marvel_poster.jpg" />
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Actor.ActorFirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Director.DirectorFirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre.GenreType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GenreType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th></th>
-    </tr>
+<div class="card">
+    <div class="card-body">
+        <p class="alert-info">
 
-    @foreach (var film in Model)
-    {
-    <li>
-        <a href="~/Film/Details/@film.FilmId">@film.FilmName</a>
+            <table class="table">
+                <tr>
+                    <th>
+                        <img src="~/Images/Captain_Marvel_poster.jpg" />
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Actor.ActorFirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Director.DirectorFirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Genre.GenreType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FilmName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FilmDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ReleaseDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rating)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GenreType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th></th>
+                </tr>
 
-        @if (film.Rating > 8)
-        {
-            <text>Film Recommended!</text>
-        }
-    </li>        
-        
-        <tr>
-            <td>
+                @foreach (var film in Model)
+                {
+                    <li>
+                        <a href="~/Film/Details/@film.FilmId">@film.FilmName</a>
 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.Actor.ActorFirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.Director.DirectorFirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.Genre.GenreType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.FilmName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.FilmDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.GenreType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => film.UserName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = film.FilmId }) |
-                @Html.ActionLink("Details", "Details", new { id = film.FilmId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = film.FilmId })
-            </td>
-        </tr>
-    }
+                        @if (film.Rating > 8)
+                        {
+                            <text>Film Recommended!</text>
+                        }
+                    </li>
 
-</table>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.Actor.ActorFirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.Director.DirectorFirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.Genre.GenreType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.FilmName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.FilmDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.ReleaseDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.Rating)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.GenreType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => film.UserName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = film.FilmId }) |
+                            @Html.ActionLink("Details", "Details", new { id = film.FilmId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = film.FilmId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+    </div>
+</div>
