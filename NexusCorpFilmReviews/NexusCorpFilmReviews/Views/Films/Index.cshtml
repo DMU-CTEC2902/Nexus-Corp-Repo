@@ -23,6 +23,7 @@
         }
     </li>
     <td>
+        @Html.ActionLink("Review", "Index", "Reviews"@*, new { id = film.FilmId }*@) |
         @Html.ActionLink("Edit", "Edit", new { id = film.FilmId }) |
         @Html.ActionLink("Details", "Details", new { id = film.FilmId }) |
         @Html.ActionLink("Delete", "Delete", new { id = film.FilmId })
