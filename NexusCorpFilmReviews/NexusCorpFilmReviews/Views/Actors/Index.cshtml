@@ -51,6 +51,7 @@
                 @Html.DisplayFor(modelItem => item.ActorGender)
             </td>
             <td>
+                @Html.ActionLink("Comment", "Index", "ActorComments") |
                 @Html.ActionLink("Edit", "Edit", new { id = item.ActorId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ActorId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ActorId })
