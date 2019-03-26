@@ -7,14 +7,14 @@ using NexusCorpFilmReviews.Models;
 namespace NexusCorpFilmReviews.Tests.Controllers
 {
     [TestClass]
-    public class ReviewControllerTest
+    public class GenreControllerTest
     {
-        //test to see if it can find the controller index
+        ////test to see if it can find the controller index
         //[TestMethod]
         //public void Index()
         //{
         //    //Arrange
-        //    ReviewsController controller = new ReviewsController();
+        //    GenresController controller = new GenresController();
 
         //    // Act
         //    ViewResult result = controller.Index() as ViewResult;
@@ -23,22 +23,21 @@ namespace NexusCorpFilmReviews.Tests.Controllers
         //    Assert.IsNotNull(result);
         //}
 
+        ////test to see if you can find the correct genre details
         //[TestMethod]
         //public void Details()
         //{
         //    //Arrange
-        //    ReviewsController controller = new ReviewsController();
+        //    GenresController controller = new GenresController();
 
-        //    //created an object to hold a review
-        //    Review newReview = new Review();
+        //    //created an object to hold a genre
+        //    Genre newGenre = new Genre();
         //    // Act
-        //    ViewResult Review = controller.Details(1) as ViewResult;
+        //    ViewResult Genre = controller.Details(1) as ViewResult;
         //    //places the details found in details 1 into the new object
-        //    newReview = Review.Model as Review;
+        //    newGenre = Genre.Model as Genre;
         //    // Assert
-        //    Assert.AreEqual(newReview.ReviewContent, "The graphics of the films are amazing!!");
+        //    Assert.AreEqual(newGenre.GenreType, "Science Fiction");
         //}
-
-
     }
 }

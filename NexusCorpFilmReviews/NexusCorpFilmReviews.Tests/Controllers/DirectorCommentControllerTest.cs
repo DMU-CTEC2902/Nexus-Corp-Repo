@@ -7,14 +7,14 @@ using NexusCorpFilmReviews.Models;
 namespace NexusCorpFilmReviews.Tests.Controllers
 {
     [TestClass]
-    public class ReviewControllerTest
+    public class DirectorCommentControllerTest
     {
-        //test to see if it can find the controller index
+        ////test to see if it can find the controller index
         //[TestMethod]
         //public void Index()
         //{
         //    //Arrange
-        //    ReviewsController controller = new ReviewsController();
+        //    DirectorCommentsController controller = new DirectorCommentsController();
 
         //    // Act
         //    ViewResult result = controller.Index() as ViewResult;
@@ -27,18 +27,16 @@ namespace NexusCorpFilmReviews.Tests.Controllers
         //public void Details()
         //{
         //    //Arrange
-        //    ReviewsController controller = new ReviewsController();
+        //    DirectorCommentsController controller = new DirectorCommentsController();
 
-        //    //created an object to hold a review
-        //    Review newReview = new Review();
+        //    //created an object to hold a director comment
+        //    DirectorComment newDirectorComment = new DirectorComment();
         //    // Act
-        //    ViewResult Review = controller.Details(1) as ViewResult;
+        //    ViewResult DirectorComment = controller.Details(1) as ViewResult;
         //    //places the details found in details 1 into the new object
-        //    newReview = Review.Model as Review;
+        //    newDirectorComment = DirectorComment.Model as DirectorComment;
         //    // Assert
-        //    Assert.AreEqual(newReview.ReviewContent, "The graphics of the films are amazing!!");
+        //    Assert.AreEqual(newDirectorComment.DirectorCommentContent, "Great production producted");
         //}
-
-
     }
 }
