@@ -4,16 +4,35 @@
     ViewBag.Title = "Films";
 }
 
-<h2>Index</h2>
+<h2>Films</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+
+@foreach (var film in Model)
+{
+    <li>
+        <img src="@film.FilmImage" />
+        <a href="~/Films/Details/@film.FilmId">@film.FilmName</a>
+
+        @if (film.Rating > 8)
+        {
+            <text>Film Recommended!</text>
+        }
+    </li>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = film.FilmId }) |
+        @Html.ActionLink("Details", "Details", new { id = film.FilmId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = film.FilmId })
+    </td>
+}
 <div class="card">
     <div class="card-body">
         <p class="alert-info">
 
-            <table class="table">
+            @*<table class="table">
                 <tr>
                     <th>
                         <img src="~/Images/Captain_Marvel_poster.jpg" />
@@ -46,9 +65,9 @@
                         @Html.DisplayNameFor(model => model.UserName)
                     </th>
                     <th></th>
-                </tr>
+                </tr>*@
 
-                @foreach (var film in Model)
+                @*@foreach (var film in Model)
                 {
                     <li>
                         <a href="~/Film/Details/@film.FilmId">@film.FilmName</a>
@@ -94,8 +113,8 @@
                             @Html.ActionLink("Delete", "Delete", new { id = film.FilmId })
                         </td>
                     </tr>
-                }
+                }*@
 
-            </table>
+            @*</table>*@
     </div>
 </div>
