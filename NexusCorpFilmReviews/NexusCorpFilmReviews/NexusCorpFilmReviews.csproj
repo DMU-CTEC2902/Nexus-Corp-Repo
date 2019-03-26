@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201903261456483_AddedFilmImage.Designer.cs">
       <DependentUpon>201903261456483_AddedFilmImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903261636214_DeleteGenreTypeFromFilmModel.cs" />
+    <Compile Include="Migrations\201903261636214_DeleteGenreTypeFromFilmModel.Designer.cs">
+      <DependentUpon>201903261636214_DeleteGenreTypeFromFilmModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Actor.cs" />
@@ -387,6 +391,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903261456483_AddedFilmImage.resx">
       <DependentUpon>201903261456483_AddedFilmImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903261636214_DeleteGenreTypeFromFilmModel.resx">
+      <DependentUpon>201903261636214_DeleteGenreTypeFromFilmModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

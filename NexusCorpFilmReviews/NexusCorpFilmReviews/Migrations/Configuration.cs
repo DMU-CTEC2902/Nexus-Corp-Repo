@@ -274,8 +274,7 @@ namespace NexusCorpFilmReviews.Migrations
             film1.Rating = 6;
             //sets the image
             film1.FilmImage = "~/Images/CaptainMarvel.jpg";
-            //sets the genre type
-            film1.GenreType = "Science Fiction";
+     
             //adds film to the context
             context.Films.AddOrUpdate(film1);
 
@@ -299,8 +298,7 @@ namespace NexusCorpFilmReviews.Migrations
             film2.Rating = 6;
             //sets the image
             film2.FilmImage = "~/Images/CMIYC.jpg";
-            //sets the genre type
-            film2.GenreType = "Science Fiction";
+           
             //adds film to the context
             context.Films.AddOrUpdate(film2);
 
@@ -324,8 +322,7 @@ namespace NexusCorpFilmReviews.Migrations
             film3.Rating = 4;
             //sets the image
             film3.FilmImage = "~/Images/Lucy.jpg";
-            //sets the genre type
-            film3.GenreType = "Thriller";
+         
             //adds film to the context
             context.Films.AddOrUpdate(film2);
 
