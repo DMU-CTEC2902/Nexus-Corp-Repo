@@ -267,8 +267,7 @@ namespace NexusCorpFilmReviews.Models
             film1.ReleaseDate = new DateTime(2019, 01, 01);
             //sets the rating
             film1.Rating = 6;
-            //sets the genre type
-            film1.GenreType = "Science Fiction";
+        
             //adds film to the context
             context.Films.Add(film1);
 
@@ -290,8 +289,7 @@ namespace NexusCorpFilmReviews.Models
             film2.ReleaseDate = new DateTime(2002, 01, 27);
             //sets the rating
             film2.Rating = 6;
-            //sets the genre type
-            film2.GenreType = "Science Fiction";
+         
             //adds film to the context
             context.Films.Add(film2);
 
@@ -313,8 +311,7 @@ namespace NexusCorpFilmReviews.Models
             film3.ReleaseDate = new DateTime(2014, 08, 22);
             //sets the rating
             film3.Rating = 4;
-            //sets the genre type
-            film3.GenreType = "Thriller";
+           
             //adds film to the context
             context.Films.Add(film2);
 
