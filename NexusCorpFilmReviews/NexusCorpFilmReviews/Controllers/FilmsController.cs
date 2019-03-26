@@ -50,7 +50,7 @@ namespace NexusCorpFilmReviews.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmId,GenreId,ActorId,DirectorId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Create([Bind(Include = "FilmId,GenreId,ActorId,DirectorId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName,FilmImage")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace NexusCorpFilmReviews.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmId,GenreId,ActorId,DirectorId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName")] Film film)
+        public ActionResult Edit([Bind(Include = "FilmId,GenreId,ActorId,DirectorId,FilmName,FilmDescription,ReleaseDate,Rating,GenreType,UserName,FilmImage")] Film film)
         {
             if (ModelState.IsValid)
             {

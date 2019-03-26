@@ -34,6 +34,8 @@ namespace NexusCorpFilmReviews.Models
         //Public property for the Rating in the Film Model
         public virtual int Rating { get; set; }
 
+        //Public property for the Film Image in the Film Model
+        public virtual string FilmImage { get; set; }
 
         //Public property for the Genre Type in the Film Model
         [StringLength(50)]
