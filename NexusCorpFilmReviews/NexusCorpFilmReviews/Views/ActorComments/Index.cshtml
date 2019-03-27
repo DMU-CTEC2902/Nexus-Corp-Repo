@@ -26,26 +26,31 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Actor.ActorFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActorCommentContent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActorCommentDateAdded)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ActorCommentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ActorCommentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ActorCommentId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor.ActorFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorCommentContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorCommentDateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ActorCommentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ActorCommentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ActorCommentId })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<div>
+    @Html.ActionLink("Back to Actor Page", "Index", "Actors")
+</div>
