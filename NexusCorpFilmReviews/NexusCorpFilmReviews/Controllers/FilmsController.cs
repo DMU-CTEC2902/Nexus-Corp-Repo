@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using NexusCorpFilmReviews.Models;
 
 namespace NexusCorpFilmReviews.Controllers
@@ -17,6 +18,8 @@ namespace NexusCorpFilmReviews.Controllers
         // GET: Films
         public ActionResult Index()
         {
+            ViewBag.UserName = User.Identity.GetUserName();
+
             var films = db.Films.Include(f => f.Actor).Include(f => f.Director).Include(f => f.Genre);
             return View(films.ToList());
         }
@@ -54,6 +57,7 @@ namespace NexusCorpFilmReviews.Controllers
         {
             if (ModelState.IsValid)
             {
+                film.UserName = User.Identity.GetUserName();
                 db.Films.Add(film);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -92,6 +96,7 @@ namespace NexusCorpFilmReviews.Controllers
         {
             if (ModelState.IsValid)
             {
+                film.UserName = User.Identity.GetUserName();
                 db.Entry(film).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
