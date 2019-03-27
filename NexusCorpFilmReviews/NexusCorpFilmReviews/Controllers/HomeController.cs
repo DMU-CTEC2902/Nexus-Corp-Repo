@@ -15,7 +15,7 @@ namespace NexusCorpFilmReviews.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Nexus Film Reviews";
 
             return View();
         }
