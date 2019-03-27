@@ -273,7 +273,7 @@ namespace NexusCorpFilmReviews.Migrations
             //sets the rating
             film1.Rating = 6;
             //sets the image
-            film1.FilmImage = "~/Images/CaptainMarvel.jpg";
+            film1.FilmImage = "/Images/CaptainMarvel.jpg";
      
             //adds film to the context
             context.Films.AddOrUpdate(film1);
@@ -297,7 +297,7 @@ namespace NexusCorpFilmReviews.Migrations
             //sets the rating
             film2.Rating = 6;
             //sets the image
-            film2.FilmImage = "~/Images/CMIYC.jpg";
+            film2.FilmImage = "/Images/CMIYC.jpg";
            
             //adds film to the context
             context.Films.AddOrUpdate(film2);
@@ -305,7 +305,7 @@ namespace NexusCorpFilmReviews.Migrations
             //Intialise the film class
             Film film3 = new Film();
             //sets the film id
-            film3.FilmId = 5;
+            film3.FilmId = 3;
             //refrences the genre id
             film3.GenreId = 7;
             //Refernce to the actor id
@@ -321,10 +321,10 @@ namespace NexusCorpFilmReviews.Migrations
             //sets the rating
             film3.Rating = 4;
             //sets the image
-            film3.FilmImage = "~/Images/Lucy.jpg";
+            film3.FilmImage = "/Images/Lucy.jpg";
          
             //adds film to the context
-            context.Films.AddOrUpdate(film2);
+            context.Films.AddOrUpdate(film3);
 
 
             //Intialise the review class
