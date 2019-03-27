@@ -11,6 +11,7 @@ namespace NexusCorpFilmReviews.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "NexusCorpFilmReviews.Models.FilmContext";
         }
 
         protected override void Seed(NexusCorpFilmReviews.Models.FilmContext context)

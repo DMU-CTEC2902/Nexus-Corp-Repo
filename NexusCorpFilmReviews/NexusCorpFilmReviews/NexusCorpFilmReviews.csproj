@@ -215,6 +215,14 @@
     <Compile Include="Migrations\201903261636214_DeleteGenreTypeFromFilmModel.Designer.cs">
       <DependentUpon>201903261636214_DeleteGenreTypeFromFilmModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903271405289_test.cs" />
+    <Compile Include="Migrations\201903271405289_test.Designer.cs">
+      <DependentUpon>201903271405289_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903271414212_AddMigration.cs" />
+    <Compile Include="Migrations\201903271414212_AddMigration.Designer.cs">
+      <DependentUpon>201903271414212_AddMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Actor.cs" />
@@ -233,6 +241,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\FilmContext-20190311111529.mdf" />
+    <Content Include="App_Data\FilmContext-20190311111529_log.ldf">
+      <DependentUpon>FilmContext-20190311111529.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -374,9 +386,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_ActorLayout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
@@ -394,6 +404,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903261636214_DeleteGenreTypeFromFilmModel.resx">
       <DependentUpon>201903261636214_DeleteGenreTypeFromFilmModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903271405289_test.resx">
+      <DependentUpon>201903271405289_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903271414212_AddMigration.resx">
+      <DependentUpon>201903271414212_AddMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
