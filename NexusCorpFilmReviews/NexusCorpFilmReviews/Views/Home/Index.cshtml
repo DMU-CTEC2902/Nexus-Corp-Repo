@@ -3,29 +3,29 @@
 }
 
 <div class="jumbotron">
-    <h1>Nexus Film Reviews</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Nexus Corporation</h1>
+    <p class="lead">Nexus Corp Is A Renowned Film-Dicussion Website, Which Promotes Interaction Through Making Reviews, Comments and Gossips.
+    Details About The Latest Films, Actors, Directors etc. Can Be Seen, Just Click On One Of The Buttons Below & Let The Magic Begin</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>What's Good To Watch</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Take a sneak peak at our latest and most popular films here! From Intense Action Scenes, To Hillarious Comedy Skits and Love Story Romances - 
+            We Have It All!
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Films", "Index", "Films") </a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Cinema Conversations</h2>
+        <p>Keep Up-To-Date With The Latest Movie News & Trends! View Our Page For All Of The Hottest Gossip</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Gossip", "Index", "Gossips") </a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Famous Figures</h2>
+        <p>Learn More About & Look At Some Of The World's Most Popular Actors & Directors</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Actors", "Index", "Actors") </a></p>
+        <p><a class="btn btn-default" @Html.ActionLink("Directors", "Index", "Directors") </a></p>
     </div>
 </div>
