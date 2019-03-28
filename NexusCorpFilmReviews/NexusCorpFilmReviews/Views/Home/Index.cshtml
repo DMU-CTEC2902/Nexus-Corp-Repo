@@ -12,11 +12,16 @@
     <div class="col-md-4">
         <h2>What's Good To Watch</h2>
         <p>
-            Take a sneak peak at our latest and most popular films here! From Intense Action Scenes, To Hillarious Comedy Skits and Love Story Romances - 
+            Take a sneak peak at our latest and most popular films here! From Intense Action Scenes, To Hillarious Comedy Skits and Love Story Romances -
             We Have It All!
         </p>
         <p><a class="btn btn-default" @Html.ActionLink("Films", "Index", "Films") </a></p>
         <img src="~/Images/AvengersEndGame.jpg" />
+        <iframe width="560"
+                height="315"
+                src="https://www.youtube.com/watch?v=TcMBFSGVi1c"
+                frameborder="0"
+                allowfullscreen></iframe>
     </div>
 
     <div class="col-md-4">
@@ -29,7 +34,8 @@
     <div class="col-md-4">
         <h2>Famous Figures</h2>
         <p>Learn More About & Look At Some Of The World's Most Popular Actors & Directors</p>
-        <p><a class="btn btn-default" @Html.ActionLink("Actors", "Index", "Actors") </a>
+        <p>
+            <a class="btn btn-default" @Html.ActionLink("Actors", "Index", "Actors") </a>
         </p> <p><a class="btn btn-default" @Html.ActionLink("Directors", "Index", "Directors") </a></p>
         <img src="~/Images/CPSS.png" />
     </div>
