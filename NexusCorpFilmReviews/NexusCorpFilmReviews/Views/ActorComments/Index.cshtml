@@ -6,9 +6,12 @@
 
 <h2>Index</h2>
 
+@* create a link to redirect to the create index*@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@* outlines the table attributes for the display *@
 <table class="table">
     <tr>
         <th>
@@ -26,8 +29,10 @@
         <th></th>
     </tr>
 
+    @* for every item within the model  *@
     @foreach (var item in Model)
     {
+        @*display the details fom the database*@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Actor.ActorFirstName)
@@ -42,6 +47,7 @@
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
+                @*theses are the links that redirect to the different view pages for edit, details and delete*@
                 @Html.ActionLink("Edit", "Edit", new { id = item.ActorCommentId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ActorCommentId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ActorCommentId })
