@@ -22,7 +22,7 @@ namespace NexusCorpFilmReviews.Controllers
         public ActionResult Index()
         {
             //Using ViewBag, retrieve the username that matches the username stored in the database
-            ViewBag.UserName = User.Identity.GetUserName();
+            ViewBag.UserName = User.Identity.GetUserId();
 
             var films = db.Films.Include(f => f.Actor).Include(f => f.Director).Include(f => f.Genre);
             return View(films.ToList());
@@ -61,7 +61,8 @@ namespace NexusCorpFilmReviews.Controllers
         {
             if (ModelState.IsValid)
             {
-                film.UserName = User.Identity.GetUserName();
+                //getting the user name from the data base and storing it in the UserName Variable
+                film.UserName = User.Identity.GetUserId();
                 db.Films.Add(film);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -100,7 +101,8 @@ namespace NexusCorpFilmReviews.Controllers
         {
             if (ModelState.IsValid)
             {
-                film.UserName = User.Identity.GetUserName();
+                //getting the user name from the data base and storing it in the UserName Variable
+                film.UserName = User.Identity.GetUserId();
                 db.Entry(film).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -29,21 +29,20 @@
     <td>
         @* adding the user restriction  *@
         @* if username is not null *@
-        @*@if (ViewBag.UserName != null)
+        @if (ViewBag.UserName != null)
         {
-            @*if the username name has a username within the database
-            if (ViewBag.UserName = film.UserName)
+            //if the username name has a username within the database
+            if (ViewBag.UserName == film.UserName)
             {
-                @* display the edit and delete options
-                @Html.ActionLink("Edit", "Edit", new { id = film.FilmId }) 
+                //display the edit and delete options
+                @Html.ActionLink("Edit", "Edit", new { id = film.FilmId })
                 @Html.ActionLink("Delete", "Delete", new { id = film.FilmId });
             }
-        }*@
-        @* if there is no user name display the followwing links *@
-        @Html.ActionLink("Review", "Index", "Reviews"@*, new { id = film.FilmId }*@) |
-        @Html.ActionLink("Edit", "Edit", new { id = film.FilmId }) |
+        }
+         @*if there is no user name display the followwing links*@ 
+        @Html.ActionLink("Review", "Index", "Reviews", new { id = film.FilmId }) |       
         @Html.ActionLink("Details", "Details", new { id = film.FilmId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = film.FilmId })
+      
     </td>
 }
 <div class="card">
@@ -83,9 +82,9 @@
                         @Html.DisplayNameFor(model => model.UserName)
                     </th>
                     <th></th>
-                </tr>*@
+                </tr>
 
-                @*@foreach (var film in Model)
+                @foreach (var film in Model)
                 {
                     <li>
                         <a href="~/Film/Details/@film.FilmId">@film.FilmName</a>
