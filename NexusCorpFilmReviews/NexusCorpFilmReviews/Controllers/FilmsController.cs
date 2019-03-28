@@ -9,15 +9,19 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using NexusCorpFilmReviews.Models;
 
+//Namespace for the film controller class
 namespace NexusCorpFilmReviews.Controllers
 {
+    //public class body for the film controller class. All the code for this controller class needs to be inside this public body fucntion
     public class FilmsController : Controller
     {
+        //Create a private variable called db connecting it to the film context
         private FilmContext db = new FilmContext();
 
-        // GET: Films
+        // public action result function for the index, which returns a view of all the connected keys to the film class 
         public ActionResult Index()
         {
+            //Using ViewBag, retrieve the username that matches the username stored in the database
             ViewBag.UserName = User.Identity.GetUserName();
 
             var films = db.Films.Include(f => f.Actor).Include(f => f.Director).Include(f => f.Genre);
@@ -133,6 +137,7 @@ namespace NexusCorpFilmReviews.Controllers
             return RedirectToAction("Index");
         }
 
+        //Protected ovveride void function for removing the film from the database  
         protected override void Dispose(bool disposing)
         {
             if (disposing)
